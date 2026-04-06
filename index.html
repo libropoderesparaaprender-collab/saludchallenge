@@ -10,154 +10,160 @@
         
         body {
             font-family: 'Montserrat', sans-serif;
-            background-color: #0f172a;
+            background-color: #fef08a; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 10px;
         }
         
+        .poster-container {
+            width: 100%;
+            max-width: 750px;
+            aspect-ratio: 1 / 1.414; /* Proporción A4 estricta */
+            background-color: #facc15; 
+            border: 10px solid #16a34a; 
+            border-radius: 15px;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            color: #064e3b; 
+        }
+
         .title-font {
             font-family: 'Bebas Neue', cursive;
         }
 
-        .gradient-text {
-            background: linear-gradient(90deg, #3b82f6, #06b6d4);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+        .infographic-step {
+            background: rgba(255, 255, 255, 0.7);
+            border-left: 6px solid #2563eb;
+            margin-bottom: 8px;
         }
 
-        .card-glow:hover {
-            box-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
-            transform: translateY(-5px);
-            transition: all 0.3s ease;
+        .exercise-card {
+            background: #ffffff;
+            border: 2px solid #16a34a;
+            color: #16a34a;
         }
 
-        .community-badge {
-            background: rgba(59, 130, 246, 0.2);
-            border: 1px solid rgba(59, 130, 246, 0.4);
-            padding: 4px 12px;
-            border-radius: 9999px;
+        .participant-badge {
+            background: #2563eb;
+            color: #ffffff;
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-weight: 800;
             font-size: 0.75rem;
-            font-weight: bold;
+            display: inline-block;
+            margin: 2px;
             text-transform: uppercase;
+        }
+
+        .highlight-box {
+            background: #2563eb;
+            color: white;
+            padding: 8px 15px;
+            display: inline-block;
+            box-shadow: 3px 3px 0px #16a34a;
+        }
+
+        .final-goal {
+            background: #16a34a;
+            color: white;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: 900;
         }
     </style>
 </head>
-<body class="p-4 md:p-8 text-white min-h-screen flex justify-center">
+<body>
 
-    <div class="max-w-4xl w-full bg-slate-900 border-4 border-blue-600 rounded-3xl overflow-hidden shadow-2xl relative">
+    <div class="poster-container">
         
-        <!-- Header / Cabecera -->
-        <div class="bg-blue-600 p-6 text-center">
-            <h2 class="text-xl md:text-2xl font-bold tracking-widest uppercase mb-1 text-blue-100">IES Diego Marín Aguilera</h2>
-            <div class="h-1 w-24 bg-white mx-auto mb-4 opacity-50"></div>
-            <h1 class="title-font text-6xl md:text-8xl tracking-tighter leading-none mb-2">SALUD CHALLENGE</h1>
-            <p class="text-lg md:text-xl font-light italic text-blue-50">"Superación personal para toda la comunidad"</p>
-        </div>
+        <!-- Header: Más compacto para ganar espacio abajo -->
+        <header class="bg-blue-600 pt-6 pb-5 px-4 text-center shadow-md relative">
+            <p class="text-white font-bold tracking-[0.3em] uppercase text-[10px] mb-1">IES Diego Marín Aguilera presenta:</p>
+            <h1 class="title-font text-6xl md:text-7xl leading-none text-yellow-300">SALUD CHALLENGE</h1>
+            <div class="mt-2">
+                <span class="highlight-box font-black text-lg uppercase tracking-tighter">OBJETIVO: SUPERAR TU NIVEL</span>
+            </div>
+        </header>
 
-        <!-- Call to Action: EVERYONE -->
-        <div class="bg-cyan-500 py-3 text-center">
-            <p class="text-slate-900 font-black text-xl md:text-2xl tracking-tight">
-                <i class="fas fa-users mr-2"></i> ¡ABIERTO A TODA LA COMUNIDAD EDUCATIVA!
-            </p>
+        <!-- PARTICIPANTES -->
+        <div class="bg-white/30 py-3 px-4 text-center border-b border-green-600">
+            <p class="text-green-900 font-black text-[10px] tracking-widest uppercase mb-1">COMUNIDAD EDUCATIVA UNIDA:</p>
+            <div class="flex flex-wrap justify-center gap-1">
+                <span class="participant-badge">Alumnado</span>
+                <span class="participant-badge">Profesorado</span>
+                <span class="participant-badge">Familias</span>
+                <span class="participant-badge">Limpieza</span>
+                <span class="participant-badge">Administración y Servicios</span>
+            </div>
         </div>
 
         <!-- Main Content -->
-        <div class="p-8">
+        <main class="flex-grow px-6 py-4 flex flex-col justify-between">
             
-            <!-- Diversity / Community Section -->
-            <div class="mb-10 text-center">
-                <h3 class="text-blue-400 font-bold mb-4 uppercase tracking-widest">¿Quién puede participar?</h3>
-                <div class="flex flex-wrap justify-center gap-3">
-                    <span class="community-badge text-blue-300">Alumnado</span>
-                    <span class="community-badge text-blue-300">Profesorado</span>
-                    <span class="community-badge text-blue-300">Familias (Padres y Madres)</span>
-                    <span class="community-badge text-blue-300">Personal de Limpieza</span>
-                    <span class="community-badge text-blue-300">Administración y Servicios</span>
-                    <span class="community-badge text-blue-300">¡TODOS!</span>
-                </div>
-                <p class="mt-6 text-xl text-slate-300 leading-relaxed">
-                    Un desafío para unirnos, mejorar nuestra salud y potenciar la atención en el aula a través del deporte.
-                </p>
-            </div>
-
-            <!-- The Challenge Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-                <!-- Dominadas -->
-                <div class="bg-slate-800 p-6 rounded-2xl text-center card-glow border border-slate-700">
-                    <div class="text-blue-500 text-5xl mb-4">
-                        <i class="fas fa-hand-rock"></i>
+            <!-- Ejercicios -->
+            <section>
+                <h3 class="title-font text-2xl text-blue-800 mb-3 text-center tracking-widest italic">ELIGE TU DESAFÍO</h3>
+                <div class="grid grid-cols-3 gap-3">
+                    <div class="exercise-card p-3 rounded-xl text-center shadow-sm">
+                        <i class="fas fa-hand-rock text-3xl mb-1"></i>
+                        <h4 class="title-font text-xl">DOMINADAS</h4>
                     </div>
-                    <h3 class="title-font text-3xl mb-2">DOMINADAS</h3>
-                    <p class="text-sm text-slate-400">Fuerza pura en barra.</p>
-                </div>
-
-                <!-- Planchas -->
-                <div class="bg-slate-800 p-6 rounded-2xl text-center card-glow border border-slate-700">
-                    <div class="text-cyan-400 text-5xl mb-4">
-                        <i class="fas fa-shield-alt"></i>
+                    <div class="exercise-card p-3 rounded-xl text-center shadow-sm border-blue-600 text-blue-600">
+                        <i class="fas fa-stopwatch text-3xl mb-1"></i>
+                        <h4 class="title-font text-xl">PLANCHAS</h4>
                     </div>
-                    <h3 class="title-font text-3xl mb-2">PLANCHAS</h3>
-                    <p class="text-sm text-slate-400">Estabilidad y Core.</p>
-                </div>
-
-                <!-- Flexiones -->
-                <div class="bg-slate-800 p-6 rounded-2xl text-center card-glow border border-slate-700">
-                    <div class="text-blue-400 text-5xl mb-4">
-                        <i class="fas fa-bolt"></i>
-                    </div>
-                    <h3 class="title-font text-3xl mb-2">FLEXIONES</h3>
-                    <p class="text-sm text-slate-400">Potencia de empuje.</p>
-                </div>
-            </div>
-
-            <!-- How to join -->
-            <div class="bg-blue-600/10 border-2 border-dashed border-blue-500 p-8 rounded-3xl mb-12 relative overflow-hidden">
-                <div class="relative z-10">
-                    <h4 class="text-2xl font-black mb-6 text-center gradient-text uppercase">Inscripciones y Proceso</h4>
-                    <ul class="space-y-4">
-                        <li class="flex items-start">
-                            <span class="bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold mr-4 shrink-0">1</span>
-                            <p class="text-lg text-slate-200 font-medium">Acude al <strong>Gimnasio</strong> durante los recreos (inicio 3er Trimestre).</p>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold mr-4 shrink-0">2</span>
-                            <p class="text-lg text-slate-200">Anotaremos tu <strong>marca inicial</strong> de hoy (a tu nivel actual).</p>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold mr-4 shrink-0">3</span>
-                            <p class="text-lg text-slate-200">¡Entrena y mejora! Al final del trimestre compararemos tu <strong>evolución</strong>.</p>
-                        </li>
-                    </ul>
-                    <div class="mt-8 pt-6 border-t border-blue-900/50 text-center">
-                        <p class="text-blue-300 font-bold uppercase tracking-tighter">Habla con los profesores de Ed. Física</p>
+                    <div class="exercise-card p-3 rounded-xl text-center shadow-sm">
+                        <i class="fas fa-bolt text-3xl mb-1"></i>
+                        <h4 class="title-font text-xl">FLEXIONES</h4>
                     </div>
                 </div>
+            </section>
+
+            <!-- Pasos: Ajustados para que el 3 entre perfecto -->
+            <section class="flex-grow flex flex-col justify-center gap-2 mt-4">
+                <div class="infographic-step p-3 flex items-center rounded-r-lg">
+                    <div class="bg-green-600 text-white rounded w-10 h-10 flex items-center justify-center font-black mr-4 shrink-0 text-xl">1</div>
+                    <p class="text-sm font-bold leading-tight">Inscríbete en el <span class="text-blue-700">Gimnasio</span> con los profes de <span class="text-blue-700">Educación Física</span> (Recreos).</p>
+                </div>
+
+                <div class="infographic-step p-3 flex items-center rounded-r-lg border-blue-500">
+                    <div class="bg-green-600 text-white rounded w-10 h-10 flex items-center justify-center font-black mr-4 shrink-0 text-xl">2</div>
+                    <p class="text-sm font-bold leading-tight">Registra tus marcas iniciales. No importa tu punto de partida, importa tu <span class="text-green-700 font-extrabold uppercase">Evolución</span>.</p>
+                </div>
+
+                <div class="infographic-step p-3 flex items-center rounded-r-lg border-yellow-500 bg-white/90 ring-2 ring-yellow-400 shadow-lg">
+                    <div class="bg-blue-600 text-white rounded w-10 h-10 flex items-center justify-center font-black mr-4 shrink-0 text-xl">3</div>
+                    <div class="flex flex-col">
+                        <p class="text-xs font-black text-blue-900 uppercase">¡META FINAL!</p>
+                        <p class="text-sm font-black leading-tight text-slate-800 uppercase italic">
+                            <span class="final-goal">SUPERAR TU NIVEL AL FINALIZAR EL CURSO</span>
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Valores -->
+            <div class="flex justify-around mt-2 text-[10px] font-black uppercase text-green-800 opacity-70">
+                <span><i class="fas fa-heart mr-1"></i>Salud</span>
+                <span><i class="fas fa-users mr-1"></i>Compañerismo</span>
+                <span><i class="fas fa-brain mr-1"></i>Atención</span>
             </div>
 
-            <!-- Values Footer -->
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-slate-400 border-t border-slate-800 pt-8">
-                <div class="flex flex-col items-center">
-                    <i class="fas fa-heartbeat text-2xl mb-1 text-red-500"></i>
-                    <span class="text-[10px] font-bold uppercase">Salud</span>
-                </div>
-                <div class="flex flex-col items-center">
-                    <i class="fas fa-handshake text-2xl mb-1 text-blue-400"></i>
-                    <span class="text-[10px] font-bold uppercase">Compañerismo</span>
-                </div>
-                <div class="flex flex-col items-center">
-                    <i class="fas fa-brain text-2xl mb-1 text-cyan-400"></i>
-                    <span class="text-[10px] font-bold uppercase">Atención</span>
-                </div>
-                <div class="flex flex-col items-center">
-                    <i class="fas fa-chart-line text-2xl mb-1 text-green-400"></i>
-                    <span class="text-[10px] font-bold uppercase">Evolución</span>
-                </div>
-            </div>
+        </main>
 
-        </div>
+        <!-- Footer -->
+        <footer class="bg-green-600 py-4 px-6 text-center border-t-2 border-yellow-400">
+            <p class="italic text-white font-black text-lg leading-tight">
+                "El lugar de donde vienes no determina hasta dónde puedes llegar"
+            </p>
+        </footer>
 
-        <!-- Motivation Banner -->
-        <div class="bg-slate-800 p-5 text-center italic text-blue-400 font-bold border-t border-blue-600/30">
-            "El lugar de donde vienes no determina hasta dónde puedes llegar"
-        </div>
     </div>
 
 </body>
